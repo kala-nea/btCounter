@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>btCounter Health Counter</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- header of page -->
+    <header>
+        <h1>BTCounter</h1>
+    </header>
+
+    <!-- main content of page -->
+    <main>
+        <article>
+            <!-- start of health tracker -->
+            <h2>Health</h2>
+
+            <!-- health display -->
+            <section>
+                <h3>Display</h3>
+                <ul>
+                    <li>Head: <p id="hHP"></p> <br> <input type="number" id="hHPi"></li>
+                    <li>Center Torso: <p id="ctHP"></p> <br> <input type="number" id="ctHPi"></li>
+                    <li>Left Torso: <p id="ltHP"></p> <br> <input type="number" id="ltHPi"></li>
+                    <li>Right Torso: <p id="rtHP"></p> <br> <input type="number" id="rtHPi"></li>
+                    <li>Left Arm: <p id="laHP"></p> <br> <input type="number" id="laHPi"></li>
+                    <li>Right Arm: <p id="raHP"></p> <br> <input type="number" id="raHPi"></li>
+                    <li>Left Leg: <p id="llHP"></p> <br> <input type="number" id="llHPi"></li>
+                    <li>Right Leg: <p id="rlHP"></p> <br> <input type="number" id="rlHPi"></li>
+                </ul>
+                <button id="hpSet">Set Hitpoints</button>
+            </section>
+
+            <!-- subtractor -->
+            <section>
+                <h3>Subtract</h3>
+
+                <!-- area input -->
+                <section>
+                    <p>Area:</p>
+                    <select name="" id="areaInput">
+                        <option value="0">Head</option>
+                        <option value="1">Center Torso</option>
+                        <option value="2">Left Torso</option>
+                        <option value="3">Right Torso</option>
+                        <option value="4">Left Arm</option>
+                        <option value="5">Right Arm</option>
+                        <option value="6">Left Leg</option>
+                        <option value="8">Right Leg</option>
+                    </select>
+                </section>
+
+                <!-- damage taken input -->
+                <section>
+                    <p>Amount:</p>
+                    <input type="number" id="damgeTaken">
+                </section>
+
+                <button id="subGo">Subtract</button>
+            </section>
+        </article>
+        
+        <article>
+            <!-- start of damage tracker -->
+            <h2>Damage</h2>
+
+            <!-- gets roll to beat -->
+            <section>
+                <!-- attacker movement type -->
+                <section>
+                    <p>Attacker Movement Type</p>
+                    <select name="" id="moveInput">
+                        <option value="0">Stationary</option>
+                        <option value="1">Walked</option>
+                        <option value="2">Ran</option>
+                        <option value="3">Jumped</option>
+                        <option value="4">Prone</option>
+                    </select>
+                </section>
+
+                <!-- target movement value -->
+                <section>
+                    <p>Target Hexes Moved</p>
+                    <input type="number" id="tmoveInput">
+                </section>
+
+                <!-- target movement type -->
+                <section>
+                    <p>Target Movement Type</p>
+                    <select name="" id="tmoveInput1">
+                        <option value="0">None</option>
+                        <option value="1">Jumped</option>
+                        <option value="2">Immobile</option>
+                        <option value="3">Prone In Adjacent Hex</option>
+                        <option value="4">Prone At Range</option>
+                    </select>
+                </section>
+
+                <!-- # of terrain changes -->
+                <section>
+                    <p>Light Woods</p>
+                    <input type="number" id="lwNum">
+                </section>
+                <section>
+                    <p>Heavy Woods</p>
+                    <input type="number" id="hwNum">
+                </section>
+                <section>
+                    <p>Water (Depth 1)</p>
+                    <input type="number" id="w1Num">
+                </section>
+                <section>
+                    <p>Water (Depth 2)</p>
+                    <input type="number" id="w2Num">
+                </section>
+                <section>
+                    <p>Partial Cover</p>
+                    <input type="checkbox" id="pcCheck">
+                </section>
+
+                <!-- range -->
+                <section>
+                    <p>Range</p>
+                    <select name="" id="rangeInput">
+                        <option value="0">Short</option>
+                        <option value="1">Medium</option>
+                        <option value="2">Long</option>
+                        <option value="3">Mimimum</option>
+                    </select>
+
+                    <!-- minimum range goof -->
+                    <p>Mimimum Range</p>
+                    <input type="number" id="mRange">
+
+                    <p>Target Range</p>
+                    <input type="number" id="tRange">
+                </section>
+
+                <button id="rtbGo">Get Roll to Beat</button>
+            </section>
+        </article>
+    </main>
+
+    <!-- footer of page -->
+    <footer>
+        <p>made by Sy</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
