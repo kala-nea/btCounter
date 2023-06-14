@@ -31,6 +31,11 @@ article {
     align-items: center;
 }
 
-button {
-    margin: 10px;
+td {
+    border: solid 1px black;
+    padding: 10px;
+}
+
+td.empty {
+    background-color: lightgray;
 }

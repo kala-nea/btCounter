@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>btCounter Health Counter</title>
+    <title>btCounter 2</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -15,134 +15,424 @@
 
     <!-- main content of page -->
     <main>
-        <article>
-            <!-- start of health tracker -->
-            <h2>Health</h2>
+        <table>
+            <tr>
+                <td>
+                    <!-- start of health tracker -->
+                    <h2>Health</h2>
+                </td>
+            </tr>
 
-            <!-- health display -->
-            <section>
-                <h3>Display</h3>
-                <ul>
-                    <li>Head: <p id="hHP"></p> <br> <input type="number" id="hHPi"></li>
-                    <li>Center Torso: <p id="ctHP"></p> <br> <input type="number" id="ctHPi"></li>
-                    <li>Left Torso: <p id="ltHP"></p> <br> <input type="number" id="ltHPi"></li>
-                    <li>Right Torso: <p id="rtHP"></p> <br> <input type="number" id="rtHPi"></li>
-                    <li>Left Arm: <p id="laHP"></p> <br> <input type="number" id="laHPi"></li>
-                    <li>Right Arm: <p id="raHP"></p> <br> <input type="number" id="raHPi"></li>
-                    <li>Left Leg: <p id="llHP"></p> <br> <input type="number" id="llHPi"></li>
-                    <li>Right Leg: <p id="rlHP"></p> <br> <input type="number" id="rlHPi"></li>
-                </ul>
-                <button id="hpSet">Set Hitpoints</button>
-            </section>
+            <tr>
+                <td>
+                    <!-- health display -->
+                    <h3>Display</h3>
 
-            <!-- subtractor -->
-            <section>
-                <h3>Subtract</h3>
+                    <table>
 
-                <!-- area input -->
-                <section>
-                    <p>Area:</p>
-                    <select name="" id="areaInput">
-                        <option value="0">Head</option>
-                        <option value="1">Center Torso</option>
-                        <option value="2">Left Torso</option>
-                        <option value="3">Right Torso</option>
-                        <option value="4">Left Arm</option>
-                        <option value="5">Right Arm</option>
-                        <option value="6">Left Leg</option>
-                        <option value="8">Right Leg</option>
-                    </select>
-                </section>
+                        <!-- table headings -->
+                        <tr>
+                            <td>Area</td>
+                            <td>Max Hitpoints</td>
+                            <td>Current Hitpoints</td>
+                        </tr>
 
-                <!-- damage taken input -->
-                <section>
-                    <p>Amount:</p>
-                    <input type="number" id="damgeTaken">
-                </section>
+                        <!-- Head Health -->
+                        <tr>
+                            <td>Head (H)</td>
+                            <td><input type="number" id="hHPi"></td>
+                            <td id="hHP"></td>
+                        </tr>
 
-                <button id="subGo">Subtract</button>
-            </section>
-        </article>
-        
-        <article>
-            <!-- start of damage tracker -->
-            <h2>Damage</h2>
+                        <!-- CT Health -->
+                        <tr>
+                            <td>Center Torso (CT)</td>
+                            <td><input type="number" id="ctHPi"></td>
+                            <td id="ctHP"></td>
+                        </tr>
 
-            <!-- gets roll to beat -->
-            <section>
-                <!-- attacker movement type -->
-                <section>
-                    <p>Attacker Movement Type</p>
-                    <select name="" id="moveInput">
-                        <option value="0">Stationary</option>
-                        <option value="1">Walked</option>
-                        <option value="2">Ran</option>
-                        <option value="3">Jumped</option>
-                        <option value="4">Prone</option>
-                    </select>
-                </section>
+                        <!-- LT Health -->
+                        <tr>
+                            <td>Left Torso (LT)</td>
+                            <td><input type="number" id="ltHPi"></td>
+                            <td id="ltHP"></td>
+                        </tr>
 
-                <!-- target movement value -->
-                <section>
-                    <p>Target Hexes Moved</p>
-                    <input type="number" id="tmoveInput">
-                </section>
+                        <!-- RT Health -->
+                        <tr>
+                            <td>Right Torso (RT)</td>
+                            <td><input type="number" id="rtHPi"></td>
+                            <td id="rtHP"></td>
+                        </tr>
 
-                <!-- target movement type -->
-                <section>
-                    <p>Target Movement Type</p>
-                    <select name="" id="tmoveInput1">
-                        <option value="0">None</option>
-                        <option value="1">Jumped</option>
-                        <option value="2">Immobile</option>
-                        <option value="3">Prone In Adjacent Hex</option>
-                        <option value="4">Prone At Range</option>
-                    </select>
-                </section>
+                        <!-- LA Health -->
+                        <tr>
+                            <td>Left Arm (LA)</td>
+                            <td><input type="number" id="laHPi"></td>
+                            <td id="laHP"></td>
+                        </tr>
 
-                <!-- # of terrain changes -->
-                <section>
-                    <p>Light Woods</p>
-                    <input type="number" id="lwNum">
-                </section>
-                <section>
-                    <p>Heavy Woods</p>
-                    <input type="number" id="hwNum">
-                </section>
-                <section>
-                    <p>Water (Depth 1)</p>
-                    <input type="number" id="w1Num">
-                </section>
-                <section>
-                    <p>Water (Depth 2)</p>
-                    <input type="number" id="w2Num">
-                </section>
-                <section>
-                    <p>Partial Cover</p>
-                    <input type="checkbox" id="pcCheck">
-                </section>
+                        <!-- RA Health -->
+                        <tr>
+                            <td>Right Arm (RA)</td>
+                            <td><input type="number" id="raHPi"></td>
+                            <td id="raHP"></td>
+                        </tr>
 
-                <!-- range -->
-                <section>
-                    <p>Range</p>
-                    <select name="" id="rangeInput">
-                        <option value="0">Short</option>
-                        <option value="1">Medium</option>
-                        <option value="2">Long</option>
-                        <option value="3">Mimimum</option>
-                    </select>
+                        <!-- LL Health -->
+                        <tr>
+                            <td>Left Leg (LL)</td>
+                            <td><input type="number" id="llHPi"></td>
+                            <td id="llHP"></td>
+                        </tr>
 
-                    <!-- minimum range goof -->
-                    <p>Mimimum Range</p>
-                    <input type="number" id="mRange">
+                        <!-- RL Health -->
+                        <tr>
+                            <td>Right Leg (RL)</td>
+                            <td><input type="number" id="rlHPi"></td>
+                            <td id="rlHP"></td>
+                        </tr>
 
-                    <p>Target Range</p>
-                    <input type="number" id="tRange">
-                </section>
+                        <tr>
+                            <td><button id="hpSet">Set Hitpoints</button></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
 
-                <button id="rtbGo">Get Roll to Beat</button>
-            </section>
-        </article>
+            <tr>
+                <td>
+                    <!-- subtractor -->
+                    <h3>Taking Damage</h3>
+                    <table>
+                        <!-- table headings -->
+                        <tr>
+                            <td>Area</td>
+                            <td>Damage Taken</td>
+                            <td class="empty"></td>
+                        </tr>
+
+                        <!-- inputs -->
+                        <tr>
+                            <!-- area input -->
+                            <td>
+                                <select name="" id="areaInput">
+                                    <option value="0">Head</option>
+                                    <option value="1">Center Torso</option>
+                                    <option value="2">Left Torso</option>
+                                    <option value="3">Right Torso</option>
+                                    <option value="4">Left Arm</option>
+                                    <option value="5">Right Arm</option>
+                                    <option value="6">Left Leg</option>
+                                    <option value="8">Right Leg</option>
+                                </select>
+                            </td>
+
+                            <!-- damge taken input -->
+                            <td>
+                                <input type="number" id="damgeTaken">
+                            </td>
+
+                            <!-- button -->
+                            <td><button id="subGo">Subtract</button></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>
+                    <!-- start of ammo tracker -->
+                    <h2>Ammo</h2>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <!-- dsiplay -->
+                    <h3>Display</h3>
+                    
+                    <table id="ammoTable">
+                        <!-- table headings -->
+                        <tr>
+                            <td>Ammo Type</td>
+                            <td>Max Amount</td>
+                            <td>Current Amount</td>
+                        </tr>
+
+                        <!-- AC2 Amount -->
+                        <tr>
+                            <td>Autocannon 2</td>
+                            <td><input type="number" id="ac2a"></td>
+                            <td id="ac2i"></td>
+                        </tr>
+
+                        <!-- AC5 Amount -->
+                        <tr>
+                            <td>Autocannon 5</td>
+                            <td><input type="number" id="ac5a"></td>
+                            <td id="ac5i"></td>
+                        </tr>
+
+                        <!-- AC10 Amount -->
+                        <tr>
+                            <td>Autocannon 10</td>
+                            <td><input type="number" id="ac10a"></td>
+                            <td id="ac10i"></td>
+                        </tr>
+
+                        <!-- AC20 Amount -->
+                        <tr>
+                            <td>Autocannon 20</td>
+                            <td><input type="number" id="ac20a"></td>
+                            <td id="ac20i"></td>
+                        </tr>
+
+                        <!-- MG Amount -->
+                        <tr>
+                            <td>Machine Gun</td>
+                            <td><input type="number" id="mga"></td>
+                            <td id="mgi"></td>
+                        </tr>
+
+                        <!-- LRM5 Amount -->
+                        <tr>
+                            <td>LRM 5</td>
+                            <td><input type="number" id="lrm5a"></td>
+                            <td id="lrm5i"></td>
+                        </tr>
+
+                        <!-- LRM5 Amount -->
+                        <tr>
+                            <td>LRM 10</td>
+                            <td><input type="number" id="lrm10a"></td>
+                            <td id="lrm10i"></td>
+                        </tr>
+
+                        <!-- LRM15 Amount -->
+                        <tr>
+                            <td>LRM 15</td>
+                            <td><input type="number" id="lrm15a"></td>
+                            <td id="lrm15i"></td>
+                        </tr>
+
+                        <!-- LRM20 Amount -->
+                        <tr>
+                            <td>LRM 20</td>
+                            <td><input type="number" id="lrm20a"></td>
+                            <td id="lrm20i"></td>
+                        </tr>
+
+                        <!-- SRM2 Amount -->
+                        <tr>
+                            <td>SRM 2</td>
+                            <td><input type="number" id="srm2a"></td>
+                            <td id="srm2i"></td>
+                        </tr>
+
+                        <!-- SRM4 Amount -->
+                        <tr>
+                            <td>SRM 4</td>
+                            <td><input type="number" id="srm4a"></td>
+                            <td id="srm4i"></td>
+                        </tr>
+
+                        <!-- SRM6 Amount -->
+                        <tr>
+                            <td>SRM 6</td>
+                            <td><input type="number" id="srm6a"></td>
+                            <td id="srm6i"></td>
+                        </tr>
+
+                        <!-- button -->
+                        <tr>
+                            <td><button id="ammoAdd">Set Ammo</button></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <!-- subtraction -->
+                    <h3>Weapons Fired</h3>
+
+                    <table>
+                        <!-- table headings -->
+                        <tr>
+                            <td>Weapon Fired</td>
+                            <td>Amount Fired</td>
+                            <td class="empty"></td>
+                        </tr>
+
+                        <!-- inputs -->
+                        <tr>
+                            <td>
+                                <select id="wfInput">
+                                    <option value="0">Autocannon 2</option>
+                                    <option value="1">Autocannon 5</option>
+                                    <option value="2">Autocannon 10</option>
+                                    <option value="3">Autocannon 20</option>
+                                    <option value="4">Machine Gun</option>
+                                    <option value="5">LRM 5</option>
+                                    <option value="6">LRM 10</option>
+                                    <option value="7">LRM 15</option>
+                                    <option value="8">LRM 20</option>
+                                    <option value="9">SRM 2</option>
+                                    <option value="10">SRM 4</option>
+                                    <option value="11">SRM 6</option>
+                                </select>
+                            </td>
+
+                            <td><input type="number" id="afInput"></td>
+
+                            <!-- button -->
+                            <td><button id="lessAmmo">Fire</button></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>
+                    <!-- start of damage tracker -->
+                    <h2>Damage</h2>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h3>Attack Check</h3>
+
+                    <table>
+                        <!-- table headings -->
+                        <tr>
+                            <td>Scenario</td>
+                            <td>Amount/Type</td>
+                            <td>Modifier</td>
+                        </tr>
+
+                        <!-- Gunnery Skill -->
+                        <tr>
+                            <td>Gunnery Skill</td>
+                            <td><input type="number" id="gsInput" value="4"></td>
+                            <td id="gsMod"></td>
+                        </tr>
+
+                        <!-- attacker movement Type -->
+                        <tr>
+                            <td>Attacker Movement Type</td>
+                            <td>
+                                <select name="" id="moveInput">
+                                    <option value="0">Stationary</option>
+                                    <option value="1">Walked</option>
+                                    <option value="2">Ran</option>
+                                    <option value="3">Jumped</option>
+                                    <option value="4">Prone</option>
+                                </select>
+                            </td>
+                            <td id="amtMod"></td>
+                        </tr>
+
+                        <!-- target movement value -->
+                        <tr>
+                            <td>Target Hexes Moved</td>
+                            <td><input type="number" id="tmoveInput" value="0"></td>
+                            <td id="tmvMod"></td>
+                        </tr>
+
+                        <!-- Target Movement Type -->
+                        <tr>
+                            <td>Target Movement Type</td>
+                            <td>
+                                <select name="" id="tmTypeInput">
+                                    <option value="0">None</option>
+                                    <option value="1">Jumped</option>
+                                    <option value="2">Immobile</option>
+                                    <option value="3">Prone In Adjacent Hex</option>
+                                    <option value="4">Prone At Range</option>
+                                </select>
+                            </td>
+                            <td id="tmtMod"></td>
+                        </tr>
+
+                        <!-- terrain changes -->
+                        <tr>
+                            <td>Light Woods</td>
+                            <td><input type="number" id="lwNum" value="0"></td>
+                            <td id="lwMod"></td>
+                        </tr>
+                        <tr>
+                            <td>Heavy Woods</td>
+                            <td><input type="number" id="hwNum" value="0"></td>
+                            <td id="hwMod"></td>
+                        </tr>
+                        <tr>
+                            <td>Water (Depth 1)</td>
+                            <td><input type="number" id="w1Num" value="0"></td>
+                            <td id="w1Mod"></td>
+                        </tr>
+                        <tr>
+                            <td>Water (Depth 2)</td>
+                            <td><input type="number" id="w2Num" value="0"></td>
+                            <td class="empty"></td>
+                        </tr>
+                        <tr>
+                            <td>Partial Cover</td>
+                            <td><input type="checkbox" id="pcCheck"></td>
+                            <td id="pcMod"></td>
+                        </tr>
+
+                        <!-- range -->
+                        <tr>
+                            <td>Range</td>
+                            <td>
+                                <select name="" id="rangeInput">
+                                    <option value="0">Short</option>
+                                    <option value="1">Medium</option>
+                                    <option value="2">Long</option>
+                                    <option value="3">Mimimum</option>
+                                </select>
+                            </td>
+                            <td id="rMod"></td>
+                        </tr>
+
+                        <!-- minimum range goof -->
+                        <tr>
+                            <td>Minimum Range</td>
+                            <td><input type="number" id="mRange" value="0"></td>
+                            <td class="empty"></td>
+                        </tr>
+                        <tr>
+                            <td>Target Range</td>
+                            <td><input type="number" id="tRange" value="0"></td>
+                            <td class="empty"></td>
+                        </tr>
+
+                        <!-- button -->
+                        <tr>
+                            <td><button id="rtbGo">Check Attack</button></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h3>Cluster Calculator</h3>
+                </td>
+            </tr>
+        </table>
     </main>
 
     <!-- footer of page -->
