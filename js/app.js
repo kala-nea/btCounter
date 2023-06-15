@@ -26,6 +26,7 @@ let subGo = document.getElementById("subGo");
 let rtbGo = document.getElementById("rtbGo");
 let ammoAdd = document.getElementById("ammoAdd");
 let lessAmmo = document.getElementById("lessAmmo");
+let cCheck = document.getElementById("cCheck");
 
 // hp subtract inputs
 let areaInput = document.getElementById("areaInput");
@@ -89,6 +90,10 @@ let hwMod = document.getElementById("hwMod");
 let w1Mod = document.getElementById("w1Mod");
 let pcMod = document.getElementById("pcMod");
 let rMod = document.getElementById("rMod");
+
+// cluster inputs
+let caInput = document.getElementById("caInput");
+let dpmInput = document.getElementById("dpmInput");
 
 
 // set health
@@ -445,3 +450,139 @@ function getRTB () {
 }
 
 rtbGo.addEventListener("click", getRTB);
+
+
+// cluster calc
+function clusterCalc () {
+    let totalDamage = 0;
+    let damgeGroup = 0;
+    let damgeGroups = [];
+    let hitMod = Math.floor(Math.random() * 11) + 2;
+
+    switch (caInput.value) {
+        case "2":
+            if (hitMod <= 7) {
+                totalDamage = 1 * parseInt(dpmInput.value);
+            } else if (hitMod <= 12) {
+                totalDamage = 2 * parseInt(dpmInput.value);
+            }
+            break;
+        case "3":
+            if (hitMod <= 4) {
+                totalDamage = 1 * parseInt(dpmInput.value);
+            } else if (hitMod <= 9) {
+                totalDamage = 2 * parseInt(dpmInput.value);
+            } else if (hitMod <= 12) {
+                totalDamage = 3 * parseInt(dpmInput.value);
+            }
+            break;
+        case "4":
+            if (hitMod <= 2) {
+                totalDamage = 1 * parseInt(dpmInput.value);
+            } else if (hitMod <= 6) {
+                totalDamage = 2 * parseInt(dpmInput.value);
+            } else if (hitMod <= 10) {
+                totalDamage = 3 * parseInt(dpmInput.value);
+            } else if (hitMod <= 12) {
+                totalDamage = 4 * parseInt(dpmInput.value);
+            }
+            break;
+        case "5":
+            if (hitMod <= 2) {
+                totalDamage = 1 * parseInt(dpmInput.value);
+            } else if (hitMod <= 5) {
+                totalDamage = 2 * parseInt(dpmInput.value);
+            } else if (hitMod <= 8) {
+                totalDamage = 3 * parseInt(dpmInput.value);
+            } else if (hitMod <= 10) {
+                totalDamage = 4 * parseInt(dpmInput.value);
+            } else if (hitMod <= 12) {
+                totalDamage = 5 * parseInt(dpmInput.value);
+            }
+            break;
+        case "6":
+            if (hitMod <= 3) {
+                totalDamage = 2 * parseInt(dpmInput.value);
+            } else if (hitMod <= 5) {
+                totalDamage = 3 * parseInt(dpmInput.value);
+            } else if (hitMod <= 8) {
+                totalDamage = 4 * parseInt(dpmInput.value);
+            } else if (hitMod <= 10) {
+                totalDamage = 5 * parseInt(dpmInput.value);
+            } else if (hitMod <= 12) {
+                totalDamage = 6 * parseInt(dpmInput.value);
+            }
+            break;
+        case "8":
+            if (hitMod <= 3) {
+                totalDamage = 3 * parseInt(dpmInput.value);
+            } else if (hitMod <= 5) {
+                totalDamage = 4 * parseInt(dpmInput.value);
+            } else if (hitMod <= 8) {
+                totalDamage = 5 * parseInt(dpmInput.value);
+            } else if (hitMod <= 10) {
+                totalDamage = 6 * parseInt(dpmInput.value);
+            } else if (hitMod <= 12) {
+                totalDamage = 8 * parseInt(dpmInput.value);
+            }
+            break;
+        case "10":
+            if (hitMod <= 3) {
+                totalDamage = 3 * parseInt(dpmInput.value);
+            } else if (hitMod <= 4) {
+                totalDamage = 4 * parseInt(dpmInput.value);
+            } else if (hitMod <= 8) {
+                totalDamage = 6 * parseInt(dpmInput.value);
+            } else if (hitMod <= 10) {
+                totalDamage = 8 * parseInt(dpmInput.value);
+            } else if (hitMod <= 12) {
+                totalDamage = 10 * parseInt(dpmInput.value);
+            }
+            break;
+        case "15":
+            if (hitMod <= 3) {
+                totalDamage = 5 * parseInt(dpmInput.value);
+            } else if (hitMod <= 4) {
+                totalDamage = 6 * parseInt(dpmInput.value);
+            } else if (hitMod <= 8) {
+                totalDamage = 9 * parseInt(dpmInput.value);
+            } else if (hitMod <= 10) {
+                totalDamage = 12 * parseInt(dpmInput.value);
+            } else if (hitMod <= 12) {
+                totalDamage = 15 * parseInt(dpmInput.value);
+            }
+            break;
+        case "20":
+            if (hitMod <= 3) {
+                totalDamage = 6 * parseInt(dpmInput.value);
+            } else if (hitMod <= 4) {
+                totalDamage = 9 * parseInt(dpmInput.value);
+            } else if (hitMod <= 8) {
+                totalDamage = 12 * parseInt(dpmInput.value);
+            } else if (hitMod <= 10) {
+                totalDamage = 16 * parseInt(dpmInput.value);
+            } else if (hitMod <= 12) {
+                totalDamage = 20 * parseInt(dpmInput.value);
+            }
+            break;
+        default:
+            alert("A cluster of this size does not exist");
+    }
+
+    for (let i = 0; i < totalDamage; i++) {
+        damgeGroup += 1;
+        if (damgeGroup >= 5) {
+            damgeGroups.push(damgeGroup);
+            damgeGroup = 0;
+        }
+    }
+
+    if (damgeGroup > 0) {
+        damgeGroups.push(damgeGroup);
+    }
+
+    alert("Damage to each area: " + damgeGroups);
+}
+
+// make button work
+cCheck.addEventListener("click", clusterCalc);
