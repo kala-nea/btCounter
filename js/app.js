@@ -274,40 +274,88 @@ ammoAdd.addEventListener("click", setAmmo);
 function subAmmo () {
     switch (wfInput.value) {
         case "0":
-            ac2i -= parseInt(afInput.value);
+            if (ac2i > 0) {
+                ac2i -= parseInt(afInput.value);
+            } else {
+                alert("You cannot use weapons with this ammo type");
+            }
             break;
         case "1":
-            ac5i -= parseInt(afInput.value);
+            if (ac5i > 0) {
+                ac5i -= parseInt(afInput.value);
+            } else {
+                alert("You cannot use weapons with this ammo type");
+            }
             break;
         case "2":
-            ac10i -= parseInt(afInput.value);
+            if (ac10i > 0) {
+                ac10i -= parseInt(afInput.value);
+            } else {
+                alert("You cannot use weapons with this ammo type");
+            }
             break;
         case "3":
-            ac20i -= parseInt(afInput.value);
+            if (ac20i > 0) {
+                ac20i -= parseInt(afInput.value);
+            } else {
+                alert("You cannot use weapons with this ammo type");
+            }
             break;
         case "4":
-            mgi -= parseInt(afInput.value);
+            if (mgi > 0) {
+                mgi -= parseInt(afInput.value);
+            } else {
+                alert("You cannot use weapons with this ammo type");
+            }
             break;
         case "5":
-            lrm5i -= parseInt(afInput.value);
+            if (lrm5i > 0) {
+                lrm5i -= parseInt(afInput.value);
+            } else {
+                alert("You cannot use weapons with this ammo type");
+            }
             break;
         case "6":
-            lrm10i -= parseInt(afInput.value);
+            if (lrm10i > 0) {
+                lrm10i -= parseInt(afInput.value);
+            } else {
+                alert("You cannot use weapons with this ammo type");
+            }
             break;
         case "7":
-            lrm15i -= parseInt(afInput.value);
+            if (lrm15i > 0) {
+                lrm15i -= parseInt(afInput.value);
+            } else {
+                alert("You cannot use weapons with this ammo type");
+            }
             break;
         case "8":
-            lrm20i -= parseInt(afInput.value);
+            if (lrm20i > 0) {
+                lrm20i -= parseInt(afInput.value);
+            } else {
+                alert("You cannot use weapons with this ammo type");
+            }
             break;
         case "9":
-            srm2i -= parseInt(afInput.value);
+            if (srm2i > 0) {
+                srm2i -= parseInt(afInput.value);
+            } else {
+                alert("You cannot use weapons with this ammo type");
+            }
             break;
         case "10":
-            srm4i -= parseInt(afInput.value);
+            if (srm4i > 0) {
+                srm4i -= parseInt(afInput.value);
+            } else {
+                alert("You cannot use weapons with this ammo type");
+            }
             break;
         case "11":
-            srm6i -= parseInt(afInput.value);
+            if (srm6i > 0) {
+                srm6i -= parseInt(afInput.value);
+            } else {
+                alert("You cannot use weapons with this ammo type");
+            }
             break;
     }
 

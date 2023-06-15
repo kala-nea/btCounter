@@ -2,11 +2,19 @@ h1,
 h2,
 h3 {
     text-align: center;
+    margin: 10px;
+}
+
+h1 {
+    margin-bottom: 50px;
+}
+
+td:not(.big) {
+    padding: 10px;
 }
 
 td {
     border: solid 1px black;
-    padding: 10px;
 }
 
 td.empty {
@@ -16,10 +24,24 @@ td.empty {
 table {
     margin: 0 auto;
     margin-bottom: 50px;
+    border-collapse: collapse;
 }
 
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+button,
+select,
+input[type=number] {
+    border-radius: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: black;
+}
+
+p {
+    text-align: center;
 }

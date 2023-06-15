@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>btCounter 2</title>
+    <title>btCounter 2 - Quick-Start</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- header of page -->
     <header>
-        <h1>BTCounter</h1>
+        <h1>BTCounter 2</h1>
     </header>
 
     <!-- main content of page -->
     <main>
         <table>
             <tr>
-                <td>
+                <td class="big">
                     <!-- start of health tracker -->
                     <h2>Health</h2>
                 </td>
             </tr>
 
             <tr>
-                <td>
+                <td class="big">
                     <!-- health display -->
                     <h3>Display</h3>
 
@@ -40,56 +40,56 @@
                         <!-- Head Health -->
                         <tr>
                             <td>Head (H)</td>
-                            <td><input type="number" id="hHPi"></td>
+                            <td><input type="number" id="hHPi" value="0"></td>
                             <td id="hHP"></td>
                         </tr>
 
                         <!-- CT Health -->
                         <tr>
                             <td>Center Torso (CT)</td>
-                            <td><input type="number" id="ctHPi"></td>
+                            <td><input type="number" id="ctHPi" value="0"></td>
                             <td id="ctHP"></td>
                         </tr>
 
                         <!-- LT Health -->
                         <tr>
                             <td>Left Torso (LT)</td>
-                            <td><input type="number" id="ltHPi"></td>
+                            <td><input type="number" id="ltHPi" value="0"></td>
                             <td id="ltHP"></td>
                         </tr>
 
                         <!-- RT Health -->
                         <tr>
                             <td>Right Torso (RT)</td>
-                            <td><input type="number" id="rtHPi"></td>
+                            <td><input type="number" id="rtHPi" value="0"></td>
                             <td id="rtHP"></td>
                         </tr>
 
                         <!-- LA Health -->
                         <tr>
                             <td>Left Arm (LA)</td>
-                            <td><input type="number" id="laHPi"></td>
+                            <td><input type="number" id="laHPi" value="0"></td>
                             <td id="laHP"></td>
                         </tr>
 
                         <!-- RA Health -->
                         <tr>
                             <td>Right Arm (RA)</td>
-                            <td><input type="number" id="raHPi"></td>
+                            <td><input type="number" id="raHPi" value="0"></td>
                             <td id="raHP"></td>
                         </tr>
 
                         <!-- LL Health -->
                         <tr>
                             <td>Left Leg (LL)</td>
-                            <td><input type="number" id="llHPi"></td>
+                            <td><input type="number" id="llHPi" value="0"></td>
                             <td id="llHP"></td>
                         </tr>
 
                         <!-- RL Health -->
                         <tr>
                             <td>Right Leg (RL)</td>
-                            <td><input type="number" id="rlHPi"></td>
+                            <td><input type="number" id="rlHPi" value="0"></td>
                             <td id="rlHP"></td>
                         </tr>
 
@@ -103,7 +103,7 @@
             </tr>
 
             <tr>
-                <td>
+                <td class="big">
                     <!-- subtractor -->
                     <h3>Taking Damage</h3>
                     <table>
@@ -132,7 +132,7 @@
 
                             <!-- damge taken input -->
                             <td>
-                                <input type="number" id="damgeTaken">
+                                <input type="number" id="damgeTaken" value="0">
                             </td>
 
                             <!-- button -->
@@ -145,14 +145,14 @@
 
         <table>
             <tr>
-                <td>
+                <td class="big">
                     <!-- start of ammo tracker -->
                     <h2>Ammo</h2>
                 </td>
             </tr>
 
             <tr>
-                <td>
+                <td class="big">
                     <!-- dsiplay -->
                     <h3>Display</h3>
                     
@@ -167,84 +167,84 @@
                         <!-- AC2 Amount -->
                         <tr>
                             <td>Autocannon 2</td>
-                            <td><input type="number" id="ac2a"></td>
+                            <td><input type="number" id="ac2a" value="0"></td>
                             <td id="ac2i"></td>
                         </tr>
 
                         <!-- AC5 Amount -->
                         <tr>
                             <td>Autocannon 5</td>
-                            <td><input type="number" id="ac5a"></td>
+                            <td><input type="number" id="ac5a" value="0"></td>
                             <td id="ac5i"></td>
                         </tr>
 
                         <!-- AC10 Amount -->
                         <tr>
                             <td>Autocannon 10</td>
-                            <td><input type="number" id="ac10a"></td>
+                            <td><input type="number" id="ac10a" value="0"></td>
                             <td id="ac10i"></td>
                         </tr>
 
                         <!-- AC20 Amount -->
                         <tr>
                             <td>Autocannon 20</td>
-                            <td><input type="number" id="ac20a"></td>
+                            <td><input type="number" id="ac20a" value="0"></td>
                             <td id="ac20i"></td>
                         </tr>
 
                         <!-- MG Amount -->
                         <tr>
                             <td>Machine Gun</td>
-                            <td><input type="number" id="mga"></td>
+                            <td><input type="number" id="mga" value="0"></td>
                             <td id="mgi"></td>
                         </tr>
 
                         <!-- LRM5 Amount -->
                         <tr>
                             <td>LRM 5</td>
-                            <td><input type="number" id="lrm5a"></td>
+                            <td><input type="number" id="lrm5a" value="0"></td>
                             <td id="lrm5i"></td>
                         </tr>
 
                         <!-- LRM5 Amount -->
                         <tr>
                             <td>LRM 10</td>
-                            <td><input type="number" id="lrm10a"></td>
+                            <td><input type="number" id="lrm10a" value="0"></td>
                             <td id="lrm10i"></td>
                         </tr>
 
                         <!-- LRM15 Amount -->
                         <tr>
                             <td>LRM 15</td>
-                            <td><input type="number" id="lrm15a"></td>
+                            <td><input type="number" id="lrm15a" value="0"></td>
                             <td id="lrm15i"></td>
                         </tr>
 
                         <!-- LRM20 Amount -->
                         <tr>
                             <td>LRM 20</td>
-                            <td><input type="number" id="lrm20a"></td>
+                            <td><input type="number" id="lrm20a" value="0"></td>
                             <td id="lrm20i"></td>
                         </tr>
 
                         <!-- SRM2 Amount -->
                         <tr>
                             <td>SRM 2</td>
-                            <td><input type="number" id="srm2a"></td>
+                            <td><input type="number" id="srm2a" value="0"></td>
                             <td id="srm2i"></td>
                         </tr>
 
                         <!-- SRM4 Amount -->
                         <tr>
                             <td>SRM 4</td>
-                            <td><input type="number" id="srm4a"></td>
+                            <td><input type="number" id="srm4a" value="0"></td>
                             <td id="srm4i"></td>
                         </tr>
 
                         <!-- SRM6 Amount -->
                         <tr>
                             <td>SRM 6</td>
-                            <td><input type="number" id="srm6a"></td>
+                            <td><input type="number" id="srm6a" value="0"></td>
                             <td id="srm6i"></td>
                         </tr>
 
@@ -259,7 +259,7 @@
             </tr>
 
             <tr>
-                <td>
+                <td class="big">
                     <!-- subtraction -->
                     <h3>Weapons Fired</h3>
 
@@ -290,7 +290,7 @@
                                 </select>
                             </td>
 
-                            <td><input type="number" id="afInput"></td>
+                            <td><input type="number" id="afInput" value="0"></td>
 
                             <!-- button -->
                             <td><button id="lessAmmo">Fire</button></td>
@@ -302,14 +302,14 @@
 
         <table>
             <tr>
-                <td>
+                <td class="big">
                     <!-- start of damage tracker -->
                     <h2>Damage</h2>
                 </td>
             </tr>
 
             <tr>
-                <td>
+                <td class="big">
                     <h3>Attack Check</h3>
 
                     <table>
@@ -428,7 +428,7 @@
             </tr>
 
             <tr>
-                <td>
+                <td class="big">
                     <h3>Cluster Calculator</h3>
 
                     <table>
